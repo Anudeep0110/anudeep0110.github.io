@@ -1,38 +1,440 @@
-.App {
-  text-align: center;
+
+.linkto {
+  cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
 }
 
-.App-header {
-  background-color: #282c34;
+::-webkit-scrollbar-thumb {
+  background-color: #571919;
+  border-radius: 4px;
+  width: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Home Page */
+
+.home {
+  position: relative;
+  min-width: 100vw;
   min-height: 100vh;
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.home::before{
+  position: absolute;
+  background-color: #161313;
+  background-image:radial-gradient(circle closest-side,#ad0884,#0f0f0f);
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  content: '';
+  z-index: -100;
+  filter: blur(100px);
+  transform: scale(1.5);
+}
+
+.header {
+  min-width: 100vw;
+  height: 100%;
+  padding-inline: 12vmin;
+  font-family: "QuickSand";
+  font-weight: 700;
+}
+
+.header-head {
+  font-size: 10vmin;
+  font-family: 'Righteous';
+}
+
+.header-text {
+  font-size: 2.5vmin;
+  text-align: justify;
+  text-indent:10vmin;
+}
+
+.animated {
+  aspect-ratio: 1/1;
+  width: 5vmin;
+  mix-blend-mode: multiply;
+}
+
+/* About Me */
+
+.icon {
+  font-size: 5vmin;
+  margin-inline: 2vmin;
+  margin-block-end: .5vmin;
+}
+
+
+.about {
+  min-width: 100vw;
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5vmin;
+}
+
+.about-me {
+  display: flex;
+  min-width: 100%;
+}
+
+.about-me div {
+  padding-inline-end: 12vmin;
+  padding: 5vmin;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.about-me div:nth-child(2){
+  display: flex;
+  gap: -10px;
+  align-items: flex-start;
+  padding-block:8vmin;
+  padding-inline-start: 10vmin;
+}
+
+.mypic {
+  aspect-ratio:1/1;
+  width: 35vmin;
+  border: 3px solid white;
+}
+
+.mydetails {
+  font-size: 3vmin;
+  font-family: 'QuickSand';
+  font-weight: 500;
+}
+
+.mydetails span {
+  font-family: 'Righteous';
+  font-weight: 200;
+}
+
+.mydetails p {
+  margin: 0.8vmin;
+}
+
+
+
+
+/* Education and Skills */
+
+.education {
+  margin-top: 5vmin;
+  min-width: 100vw;
+  height: 100%;
+  text-align: center;
+  padding-block: 5vmin;
+}
+
+.edu-text {
+  font-family: 'Righteous';
+  font-size: 5vmin;
+  margin-bottom: 5vmin;
+}
+
+
+.edu-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+  gap: 5vmin;
+  padding-inline: 5vmin;
+}
+
+.edu-details div {
+  border-radius: .5vmin;
+  flex: 1;
+  flex-basis: 0;
+}
+
+
+
+.academics {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.academics div {
+  padding: 3vmin;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: start;
+}
+
+.academics div:nth-child(2) {
+  display: flex;
+}
+
+.academics div p {
+  font-family: 'QuickSand';
+  margin: .5vmin;
+  font-size: 3vmin;
+  font-weight: 600;
+}
+
+.academics div p:nth-child(1) {
+  font-family: 'Righteous';
+  font-weight: 100;
+  font-size: 3.5vmin;
+}
+
+.academics div p:nth-child(2) {
+  font-size: 2.3vmin;
+}
+
+.academics div p:nth-child(3) {
+  font-size: 2vmin;
+}
+
+.academics div p span {
+  font-family: 'Righteous';
+}
+
+.resume {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 5vmin;
+  margin-top: 5vmin;
+}
+
+.resume button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 3vmin;
+  font-family: 'Righteous';
+}
+
+.resume button .links {
+  font-size: 3.5vmin;
+  margin-left: .5vmin;
+}
+
+
+
+/* Skills */
+
+.skills {
+  margin-bottom: 500px;
+  width: 100%;
+  border: 1px solid white;
+  margin-top: 15vmin;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 5vmin;
 }
 
-.App-link {
-  color: #61dafb;
+.skill-list {
+  display: flex;
+  gap: 10vmin;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.skill-card {
+  width:15rem;
+  aspect-ratio: 1/1;
+  padding: 3vmin;
+  padding-inline: 2vmin;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  background-color: rgba(255,255,255,.3);
+  border-radius: 10px;
+}
+
+.skill-card:hover{
+  scale: 1.1;
+  box-shadow: 0px 0px 30px 5px rgba(255,255,255,.3);
+}
+
+.skill-card p {
+  margin-block: 1px;
+  font-family: 'QuickSand';
+  font-size: 3vmin;
+  font-weight: 500;
+}
+
+.skill-card p:nth-child(4) {
+  font-size: 2vmin;
+}
+
+.line{
+  background-color: white;
+  height: 1px;
+  width: 80%;
+}
+
+.level {
+  color: #00ffff;
+  font-weight: 800;
+}
+
+
+
+
+
+/* Other Devices */
+
+@media screen and (min-width:400px) and (max-width:767px) {
+  .home::before{
+    filter:blur(100px);
   }
-  to {
-    transform: rotate(360deg);
+  .about-me{
+    flex-direction: column;
+  }
+  .edu-details div {
+    flex: none;
+  }
+  .about-me div {
+    align-items: center;
+  }
+  .about-me div:nth-child(2) {
+    align-items: flex-start;
+  }
+  .academics {
+    flex-direction: column-reverse;
+    width: 90%;
+  }
+  .academics div:nth-child(2) img {
+    width: 100%;
+  }
+  .mydetails {
+    font-weight: 600;
+  }
+
+  .skill-list {
+    gap: 10vmin 15vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .skill-card {
+    width: 150px;
+    aspect-ratio: 1/1;
+    padding-block: 4vmin;
+    padding-inline: 2vmin;
+  }
+}
+
+
+/* Responsiveness for Mobiles */
+@media only screen and (max-width: 400px) {
+  
+  .home::before{
+    filter:blur(100px);
+  }
+  .about-me{
+    flex-direction: column;
+  }
+  .edu-details div {
+    flex: none;
+  }
+  .about-me div {
+    align-items: center;
+  }
+  .about-me div:nth-child(2) {
+    align-items: flex-start;
+  }
+  .academics {
+    flex-direction: column-reverse;
+    width: 90%;
+  }
+  .academics div:nth-child(2) img {
+    width: 100%;
+  }
+  .mydetails {
+    font-weight: 600;
+  }
+
+  .skill-list {
+    gap: 10vmin 15vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .skill-card {
+    width: 100px;
+    aspect-ratio: 1/1;
+    padding-block: 4vmin;
+    padding-inline: 2vmin;
+  }
+  
+}
+
+
+/* Responsiveness for Tablets */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  
+  .home::before{
+    filter:blur(100px);
+  }
+
+  .about-me{
+    flex-direction: column;
+  }
+  .about-me div {
+    align-items: center;
+  }
+  .about-me div:nth-child(2) {
+    align-items: flex-start;
+  }
+}
+
+
+/* Responsiveness for Small Desktops */
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+  
+  .home::before{
+    filter:blur(100px);
+  }
+  
+}
+
+
+/* Responsiveness for Medium Desktops */
+@media only screen and (min-width: 1280px) and (max-width: 1439px) {
+  
+  .home::before{
+    filter:blur(20px);
+  }
+}
+
+
+/* Responsivesness for Large Desktops */
+@media only screen and (max-width: 1440px) {
+  
+  .home::before{
+    filter:blur(20px);
   }
 }
